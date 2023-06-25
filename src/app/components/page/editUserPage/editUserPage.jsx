@@ -117,16 +117,6 @@ const EditUserPage = () => {
             }))
         );
     }, [qualities]);
-    // useEffect(() => {
-    //     setData((prevState) => ({
-    //         ...prevState,
-    //         name: currentUser.name,
-    //         email: currentUser.email,
-    //         sex: currentUser.sex,
-    //         qualities: getQualities(currentUser.qualities),
-    //         profession: currentUser.profession
-    //     }));
-    // }, [qualities]);
 
     return (
         <div className="container mt-5">

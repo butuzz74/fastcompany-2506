@@ -99,10 +99,8 @@ const AuthProvider = ({ children }) => {
     }
     async function editUser(data) {
         try {
-            console.log(currentUser);
             const { content } = await userService.edit(data);
-            console.log(content);
-            setUser(prevState => ({ ...prevState, ...content }));
+            setUser((prevState) => ({ ...prevState, ...content }));
         } catch (error) {
             errorCatcher(error);
         }
@@ -143,7 +141,9 @@ const AuthProvider = ({ children }) => {
         }
     }, [error]);
     return (
-        <AuthContext.Provider value={{ signUp, logIn, currentUser, logOut, editUser }}>
+        <AuthContext.Provider
+            value={{ signUp, logIn, currentUser, logOut, editUser }}
+        >
             {!isLoading ? children : "Loading..."}
         </AuthContext.Provider>
     );
